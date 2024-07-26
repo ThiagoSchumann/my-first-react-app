@@ -4,24 +4,91 @@
 @tailwind utilities;
 
 /* Adicionando alguns ajustes personalizados */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .sidebar {
-  @apply fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform transition-transform duration-300 ease-in-out;
+  @apply fixed top-0 left-0 h-full w-64 transform transition-transform duration-300 ease-in-out;
 }
 
 .sidebar ul li {
-  @apply flex items-center px-4 py-2 hover:bg-gray-700;
+  @apply w-full;
+}
+
+.sidebar ul li a {
+  @apply flex items-center px-4 py-2 w-full;
 }
 
 .menu-btn {
-  @apply text-3xl m-4 p-1 border rounded-lg md:text-2xl md:m-2;
+  @apply text-3xl m-4 md:text-2xl md:m-2;
 }
 
 .close-btn {
   @apply absolute top-4 right-4 text-2xl;
 }
 
+/* Ajustar a largura da sidebar */
+.sidebar-open {
+  margin-left: 250px;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     @apply w-56;
   }
+
+  .sidebar-open {
+    margin-left: 224px;
+  }
+}
+
+/* Estilos de tema escuro */
+.dark .sidebar {
+  @apply bg-[#222831] text-[#76ABAE];
+}
+
+.dark .sidebar ul li:hover {
+  @apply bg-gray-700;
+}
+
+.dark .sidebar ul li a {
+  @apply text-[#76ABAE];
+}
+
+.dark .menu-btn {
+  @apply border-gray-700;
+}
+
+.dark .content {
+  @apply bg-[#31363F] text-[#EEEEEE];
+}
+
+.dark body {
+  @apply bg-[#31363F] text-[#EEEEEE];
+}
+
+/* Estilos de tema claro */
+.light .sidebar {
+  @apply bg-[#BEC6A0] text-[#708871];
+}
+
+.light .sidebar ul li:hover {
+  @apply bg-gray-300;
+}
+
+.light .sidebar ul li a {
+  @apply text-[#708871];
+}
+
+.light .menu-btn {
+  @apply border-gray-400;
+}
+
+.light .content {
+  @apply bg-[#FEF3E2] text-[#606676];
+}
+
+.light body {
+  @apply bg-[#FEF3E2] text-[#606676];
 }
