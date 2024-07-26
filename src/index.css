@@ -1,0 +1,27 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adicionando alguns ajustes personalizados */
+.sidebar {
+  @apply fixed top-0 left-0 h-full w-64 bg-gray-800 text-white transform transition-transform duration-300 ease-in-out;
+}
+
+.sidebar ul li {
+  @apply flex items-center px-4 py-2 hover:bg-gray-700;
+}
+
+.menu-btn {
+  @apply text-3xl m-4 p-1 border rounded-lg md:text-2xl md:m-2;
+}
+
+.close-btn {
+  @apply absolute top-4 right-4 text-2xl;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    @apply w-56;
+  }
+}
